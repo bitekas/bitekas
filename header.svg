@@ -95,10 +95,12 @@
                 <br />
                 <br />
                 <br />
+                <span class="gray"> /home/bitekas$ gcc main.c</span>
+                <br />
+                <span class="gray"> /home/bitekas$ ./a.out</span>
                 <br />
                 <br />
                 hello, world!
-                <br />
                 <br />
                 <span class="gray"> /home/bitekas$</span> <span class="blink">_</span>
             </div>
