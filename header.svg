@@ -4,7 +4,7 @@
     <foreignObject width="100%" height="100%">
         <div xmlns="http://www.w3.org/1999/xhtml">
             <style>
-                @import url('https://fonts.cdnfonts.com/css/cascadia-code');
+                @import url('https://fonts.cdnfonts.com/css/perfect-dos-vga-437');
 
                 @keyframes scanline-animation {
                     0% {
@@ -40,12 +40,12 @@
 
                 .divel {
                     color: white;
-                    font-family: 'Cascadia Code';
+                    font-family: 'Perfect DOS VGA 437';
                     font-size: 30px;
                     line-height: 30px;
                     position: absolute;
                     top: 0px;
-                    left: 30px;
+                    left: 0px;
                 }
 
                 .moving-scanline {
@@ -89,6 +89,7 @@
             </style>
 
             <div class="divel">
+                <br />
                 <br />
                 <br />
                 <br />
