@@ -1,6 +1,6 @@
 <svg viewBox="0 0 800 400" width="800" height="400" xmlns="http://www.w3.org/2000/svg">
     <rect width="100%" height="100%" style="fill:rgb(0,0,128);stroke-width:0;stroke:rgb(0,0,128)" />
-
+    <!--
     <filter id='RgbShiftBitekas' x='0%' y='0%' width='100%' height='100%'>
         <feTurbulence result="TURBULENCE" baseFrequency="0.1 0.2" result="NOISE" numOctaves="1" stitchTiles="stitch">
             <animate id="noiseAnimate" attributeName="baseFrequency" values="0,80;0,50;0,80" dur="200s"
@@ -29,10 +29,6 @@
 
         <feBlend in="rgbShiftR" in2="rgbShiftB" result="rgbShiftRB" mode="lighten" />
         <feBlend in="rgbShiftRB" in2="rgbShiftG" result="out" mode="lighten" />
-
-        <!-- add this line to see something cool! !-->
-        <!--feBlend in="out" in2="SourceGraphic" result="out" mode="difference"/-->
-
     </filter>
 
     <foreignObject width="100%" height="100%">
@@ -145,5 +141,5 @@
             </div>
         </div>
     </foreignObject>
-
+-->
 </svg>
