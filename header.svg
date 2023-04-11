@@ -1,85 +1,133 @@
-<svg fill="none" viewBox="0 0 800 400" width="800" height="400" xmlns="http://www.w3.org/2000/svg">
-	<foreignObject width="100%" height="100%">
-		<div xmlns="http://www.w3.org/1999/xhtml">
-			<style>
-				@keyframes rotate {
-					0% {
-						transform: rotate(3deg);
-					}
-					100% {
-						transform: rotate(-3deg);
-					}
-				}
-				@keyframes gradientBackground {
-					0% {
-						background-position: 0% 50%;
-					}
-					50% {
-						background-position: 100% 50%;
-					}
-					100% {
-						background-position: 0% 50%;
-					}
-				}
-				@keyframes fadeIn {
-					0% {
-						opacity: 0;
-					}
-					66% {
-						opacity: 0;
-					}
-					100% {
-						opacity: 1;
-					}
-				}
-				.container {
-					font-family:
-						system-ui,
-						-apple-system,
-						'Segoe UI',
-						Roboto,
-						Helvetica,
-						Arial,
-						sans-serif,
-						'Apple Color Emoji',
-						'Segoe UI Emoji';
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-					justify-content: center;
-					margin: 0;
-					width: 100%;
-					height: 400px;
-					background: linear-gradient(-45deg, #fc5c7d, #6a82fb, #05dfd7);
-					background-size: 600% 400%;
-					animation: gradientBackground 10s ease infinite;
-					border-radius: 10px;
-					color: white;
-					text-align: center;
-				}
-				h1 {
-					font-size: 50px;
-					line-height: 1.3;
-					letter-spacing: 5px;
-					text-transform: uppercase;
-					text-shadow:
-						0 1px 0 #efefef,
-						0 2px 0 #efefef,
-						0 3px 0 #efefef,
-						0 4px 0 #efefef,
-						0 12px 5px rgba(0, 0, 0, 0.1);
-					animation: rotate ease-in-out 1s infinite alternate;
-				}
-				p {
-					font-size: 20px;
-					text-shadow: 0 1px 0 #efefef;
-					animation: 5s ease 0s normal forwards 1 fadeIn;
-				}
-			</style>
-			<div class="container">
-				<h1>Made with HTML &amp; CSS<br/>not an animated GIF</h1>
-				<p>Click to see the source</p>
-			</div>
-		</div>
-	</foreignObject>
+<svg viewBox="0 0 800 400" width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100%" height="100%" style="fill:rgb(0,0,128);stroke-width:0;stroke:rgb(0,0,128)" />
+
+    <filter id='RgbShiftBitekas' x='0%' y='0%' width='100%' height='100%'>
+        <feTurbulence result="TURBULENCE" baseFrequency="0.1 0.2" result="NOISE" numOctaves="1" stitchTiles="stitch">
+            <animate id="noiseAnimate" attributeName="baseFrequency" values="0,80;0,50;0,80" dur="200s"
+                repeatCount="indefinite"></animate>
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="TURBULENCE" result="distorted" scale="5" xChannelSelector="R"
+            yChannelSelector="R"></feDisplacementMap>
+
+        <feOffset result="distortedR" in="distorted" dx="3" dy="0" />
+        <feOffset result="distortedL" in="distorted" dx="-2" dy="0" />
+
+        <feColorMatrix in="distortedR" type="matrix" result="rgbShiftR" values="1 0 0 0 0
+                0 0 0 0 0
+                0 0 0 0 0
+                0 0 0 1 0" />
+
+        <feColorMatrix in="distorted" type="matrix" result="rgbShiftG" values="0 0 0 0 0
+                0 1 0 0 0
+                0 0 0 0 0
+                0 0 0 1 0" />
+
+        <feColorMatrix in="distortedL" type="matrix" result="rgbShiftB" values="0 0 0 0 0
+                0 0 0 0 0
+                0 0 1 0 0
+                0 0 0 1 0" />
+
+        <feBlend in="rgbShiftR" in2="rgbShiftB" result="rgbShiftRB" mode="lighten" />
+        <feBlend in="rgbShiftRB" in2="rgbShiftG" result="out" mode="lighten" />
+
+        <!-- add this line to see something cool! !-->
+        <!--feBlend in="out" in2="SourceGraphic" result="out" mode="difference"/-->
+
+    </filter>
+
+    <foreignObject width="100%" height="100%">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <style>
+                @import url('https://fonts.cdnfonts.com/css/cascadia-code');
+
+                @keyframes scanline-animation {
+                    0% {
+                        transform: translateY(-100%);
+                    }
+
+                    100% {
+                        transform: translateY(400px);
+                    }
+                }
+
+                @keyframes blink-animation {
+                    0% {
+                        opacity: 0%;
+                    }
+
+                    42% {
+                        opacity: 0%;
+                    }
+
+                    50% {
+                        opacity: 100%;
+                    }
+
+                    92% {
+                        opacity: 100%;
+                    }
+
+                    100% {
+                        opacity: 0%;
+                    }
+                }
+
+                .divel {
+                    color: white;
+                    filter: url("#RgbShiftBitekas");
+                    font-family: 'Cascadia Code';
+                    font-size: 30px;
+                    line-height: 30px;
+                    position: absolute;
+                    top: 0px;
+                    left: 30px;
+                }
+
+                .scanline {
+                    position: absolute;
+                    width: 100%;
+                    height: 20%;
+                    background-color: rgba(255, 255, 255, 0.05);
+                    animation: scanline-animation linear 1s infinite;
+                }
+
+                .blink {
+                    animation: blink-animation linear 1s infinite;
+                }
+
+                .vignette {
+                    box-shadow: inset 0 0 min(100px, 100px) #005;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    width: 800px;
+                    height: 400px;
+                }
+
+                .gray {
+                    color: gray;
+                }
+            </style>
+
+            <div class="divel">
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                hello, world!
+                <br />
+                <br />
+                <span class="gray"> /home/bitekas$</span> <span class="blink">_</span>
+            </div>
+            <div class="vignette" />
+
+            <div class="scanline" />
+        </div>
+    </foreignObject>
+
 </svg>
