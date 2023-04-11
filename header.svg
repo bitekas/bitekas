@@ -41,7 +41,7 @@
 
                 .divel {
                     color: white;
-                    font-family: 'VT323';
+                    font-family: 'Perfect DOS VGA 437', sans-serif;
                     font-size: 30px;
                     line-height: 30px;
                     position: absolute;
