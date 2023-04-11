@@ -5,6 +5,7 @@
         <div xmlns="http://www.w3.org/1999/xhtml">
             <style>
                 @import url('https://fonts.cdnfonts.com/css/perfect-dos-vga-437');
+                @import url('https://fonts.googleapis.com/css?family=VT323&display=swap');
 
                 @keyframes scanline-animation {
                     0% {
@@ -40,7 +41,7 @@
 
                 .divel {
                     color: white;
-                    font-family: 'Perfect DOS VGA 437 Win';
+                    font-family: 'VT323';
                     font-size: 30px;
                     line-height: 30px;
                     position: absolute;
