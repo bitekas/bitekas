@@ -152,23 +152,25 @@
 
 .typing {
   color:#0000;
-  background:
-    linear-gradient(-90deg,#00DFFC 5px,#0000 0) 10px 0,
+
+  background: 
+    linear-gradient(-90deg,#FFFFFF 1ch,#0000 0) 0 0,
     linear-gradient(#00DFFC 0 0) 0 0;
-  background-size:calc(var(--n)*1ch) 200%;
+  background-size:calc((var(--n))*1ch) 100%;
   -webkit-background-clip:padding-box,text;
   background-clip:padding-box,text;
   background-repeat:no-repeat;
-  animation: 
-   b .7s infinite steps(1),   
-   t calc(var(--n)*.3s) steps(var(--n)) forwards;
+  animation:
+   carret-blink .6s infinite steps(1),   
+   mask calc(var(--n)*.3s) steps(var(--n)) forwards;
 }
 
-@keyframes t{
+@keyframes mask{
   from {background-size:0 200%}
 }
-@keyframes b{
-  50% {background-position:0 -100%,0 0}
+@keyframes carret-blink{
+  0% { background-position: 0 -200%, 0 0 }
+  50% { background-position: 1ch -80%, 0 0 }
 }
             </style>
 
@@ -191,9 +193,13 @@
                     <br />
                     <span class="gray"> /home/bitekas$</span> 
                     <span class="typing" style="--n:530">
-sdfsdf
+&lt;svg viewBox=\"0 0 800 400\" width=\"800\" height=\"400\" xmlns=\"http://www.w3.org/2000/svg\">
+
+&lt;!-- bitekas github profile -->
+
+    &lt;defs>
+        &lt;filter id='noise' x='0%' y='0%' width='100%' height='100%'>
                     </span>
-                    <!-- <span class="blink">_</span> -->
                 </div>
             </div>
 
