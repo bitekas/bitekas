@@ -3,11 +3,8 @@
     <defs>
         <filter id='noise' x='0%' y='0%' width='100%' height='100%'>
 	        
-                <feDisplacementMap in="SourceGraphic" result="distorted" scale="5" xChannelSelector="R" yChannelSelector="R" />
-
-            <!-- 
                 
-                <feDisplacementMap in="SourceGraphic" in2="TURBULENCE" result="distorted" scale="5" xChannelSelector="R" yChannelSelector="R"></feDisplacementMap>
+                <feDisplacementMap in="SourceGraphic" in2="TURBULENCE" result="distorted" scale="5" xChannelSelector="R" yChannelSelector="R"/>
     
             <feOffset result="distortedR" in="distorted" dx="3" dy="0" />
             <feOffset result="distortedL" in="distorted" dx="-2" dy="0" />
@@ -37,9 +34,7 @@
                         0 0 0 1 0" />
                         
             <feBlend in="rgbShiftR" in2="rgbShiftB" result="rgbShiftRB" mode="lighten"/>
-            <feBlend in="rgbShiftRB" in2="rgbShiftG" result="out" mode="lighten"/> -->
-
-
+            <feBlend in="rgbShiftRB" in2="rgbShiftG" result="out" mode="lighten"/>
 
         </filter>
     </defs>
