@@ -1,5 +1,50 @@
 <svg viewBox="0 0 800 400" width="800" height="400" xmlns="http://www.w3.org/2000/svg">
-    <rect width="100%" height="100%" style="fill:rgb(0,0,128);stroke-width:0;stroke:rgb(0,0,128)" />
+
+<!-- bitekas github profile -->
+
+    <defs>
+        <filter id='noise' x='0%' y='0%' width='100%' height='100%'>
+
+            <feTurbulence baseFrequency="0.1 0.2" result="BitekasRGBShift" numOctaves="1" stitchTiles="stitch">
+                <animate id="noiseAnimate" attributeName="baseFrequency" values="0,80;0,50;0,80" dur="200s" repeatCount="indefinite"/>
+            </feTurbulence>
+
+            <feDisplacementMap in="SourceGraphic" in2="TURBULENCE" result="distorted" scale="5" xChannelSelector="R" yChannelSelector="R"/>
+    
+            <feOffset result="distortedR" in="distorted" dx="3" dy="0" />
+            <feOffset result="distortedL" in="distorted" dx="-2" dy="0" />
+
+            <feColorMatrix in="distortedR"
+                type="matrix"
+                result="rgbShiftR"
+                values="1 0 0 0 0
+                        0 0 0 0 0
+                        0 0 0 0 0
+                        0 0 0 1 0" />
+    
+            <feColorMatrix in="distorted"
+                type="matrix"
+                result="rgbShiftG"
+                values="0 0 0 0 0
+                        0 1 0 0 0
+                        0 0 0 0 0
+                        0 0 0 1 0" />
+            
+            <feColorMatrix in="distortedL"
+                type="matrix"
+                result="rgbShiftB"
+                values="0 0 0 0 0
+                        0 0 0 0 0
+                        0 0 1 0 0
+                        0 0 0 1 0" />
+                        
+            <feBlend in="rgbShiftR" in2="rgbShiftB" result="rgbShiftRB" mode="lighten"/>
+            <feBlend in="rgbShiftRB" in2="rgbShiftG" result="out" mode="lighten"/>
+
+        </filter>
+    </defs>
+
+    <rect width="100%" height="100%" style="fill:rgb(0,0,128);stroke-width:0;stroke:rgb(0,0,128)" id="bluerect" />
 
     <foreignObject width="100%" height="100%">
         <div xmlns="http://www.w3.org/1999/xhtml">
@@ -52,6 +97,7 @@
                     position: absolute;
                     bottom: 0px;
                     left: 0px;
+                    filter: url("#noise");
                 }
 
                 .moving-scanline {
@@ -127,7 +173,7 @@
             </style>
 
             <div class="vignette">
-                <div class="divel">
+                <div class="divel" id="id1">
                     <br />
                     <br />
                     <br />
@@ -145,14 +191,9 @@
                     <br />
                     <span class="gray"> /home/bitekas$</span> 
                     <span class="typing" style="--n:530">
-                        vec4 col = texture(iChannel0,c1)*(alpha);
-                        fragColor = col;
-                        vec4 col = texture(iChannel0,c1)*(alpha);
-                        fragColor = col;
-                        vec4 col = texture(iChannel0,c1)*(alpha);
-                        fragColor = col;
+sdfsdf
                     </span>
-                    <span class="blink">_</span>
+                    <!-- <span class="blink">_</span> -->
                 </div>
             </div>
 
