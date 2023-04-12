@@ -95,7 +95,7 @@
                     font-size: 30px;
                     line-height: 30px;
                     position: absolute;
-                    top: 0px;
+                    bottom: 0px;
                     left: 0px;
                     filter: url("#noise");
                 }
@@ -122,10 +122,6 @@
                     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
                 }
 
-                .blink {
-                    animation: blink-animation linear 1s infinite;
-                }
-
                 .vignette {
                     box-shadow: inset 0 0 100px #005;
                     position: absolute;
@@ -138,27 +134,60 @@
                 .gray {
                     color: gray;
                 }
+
+.typing {
+  color:#0000;
+
+  background: 
+    linear-gradient(-90deg,#FFFFFF 1ch,#0000 0) 0 0,
+    linear-gradient(#00DFFC 0 0) 0 0;
+  background-size:calc((var(--n))*1ch) 100%;
+  -webkit-background-clip:padding-box,text;
+  background-clip:padding-box,text;
+  background-repeat:no-repeat;
+  animation:
+   carret-blink .5s infinite steps(1),
+   mask calc(var(--n)*0.2s  ) steps(var(--n)) forwards;
+}
+
+@keyframes mask{
+  from {background-size: 0% 200%;
+    }
+}
+@keyframes carret-blink{
+  0% { background-position: 0 -200%, 0 0 }
+  50% { background-position: 1ch -90%, 0 0 }
+}
             </style>
 
-            <div class="divel" id="id1">
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <span class="gray"> /home/bitekas$ gcc main.c</span>
-                <br />
-                <span class="gray"> /home/bitekas$ ./a.out</span>
-                <br />
-                <br />
-                hello, world!
-                <br />
-                <span class="gray"> /home/bitekas$</span> <span class="blink">_</span>
+            <div class="vignette">
+                <div class="divel" id="id1">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <span class="gray"> /home/bitekas$ gcc main.c</span>
+                    <br />
+                    <span class="gray"> /home/bitekas$ ./a.out</span>
+                    <br />
+                    <br />
+                    hello, world!
+                    <br />
+                    <span class="gray"> /home/bitekas$</span> 
+                    <span class="typing" style="--n:530">
+echo "&lt;svg viewBox=\"0 0 800 400\" width=\"800\" height=\"400\" xmlns=\"http://www.w3.org/2000/svg\">
+
+&lt;!-- bitekas github profile -->
+
+    &lt;defs>
+        &lt;filter id='noise' x='0%' y='0%' width='100%' height='100%'> &lt;feTurbulence baseFrequency=\"0.1 0.2\" result=\"BitekasRGBShift\" numOctaves=\"1\" stitchTiles="stitch"> &lt;animate id=\"noiseAnimat 
+                    </span>
+                </div>
             </div>
-            <div class="vignette" />
 
             <div class="moving-scanline">
                 <div class="scanline" />
