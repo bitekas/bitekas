@@ -54,6 +54,10 @@
                     left: 0px;
                 }
 
+                div:hover {
+                    background-color: red;
+                }
+
                 .moving-scanline {
                     animation: scanline-animation linear 5s infinite;
                     position: absolute;
