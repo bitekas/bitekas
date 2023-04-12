@@ -147,7 +147,7 @@
   background-repeat:no-repeat;
   animation:
    carret-blink .5s infinite steps(1),
-   mask calc(var(--n)*0.2s  ) steps(var(--n)) forwards;
+   mask calc(var(--n)*0.002s  ) steps(var(--n)) forwards;
 }
 
 @keyframes mask{
@@ -184,7 +184,7 @@ echo "&lt;svg viewBox=\"0 0 800 400\" width=\"800\" height=\"400\" xmlns=\"http:
 &lt;!-- bitekas github profile -->
 
     &lt;defs>
-        &lt;filter id='noise' x='0%' y='0%' width='100%' height='100%'> &lt;feTurbulence baseFrequency=\"0.1 0.2\" result=\"BitekasRGBShift\" numOctaves=\"1\" stitchTiles="stitch"> &lt;animate id=\"noiseAnimate" 
+        &lt;filter id='noise' x='0%' y='0%' width='100%' height='100%'> &lt;feTurbulence baseFrequency=\"0.1 0.2\" result=\"BitekasRGBShift\" numOctaves=\"1\" stitchTiles="stitch"> &lt;animate id=\"noiseAnimat 
                     </span>
                 </div>
             </div>
