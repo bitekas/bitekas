@@ -135,12 +135,6 @@
                     color: gray;
                 }
 
-                @property --n {
-                    syntax: "<number>";
-                    inherits: false;
-                    initial-value: 530;
-                }
-
 .typing {
   color:#0000;
 
