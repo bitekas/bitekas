@@ -122,10 +122,6 @@
                     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
                 }
 
-                .blink {
-                    animation: blink-animation linear 1s infinite;
-                }
-
                 .vignette {
                     box-shadow: inset 0 0 100px #005;
                     position: absolute;
@@ -139,15 +135,10 @@
                     color: gray;
                 }
 
-                @keyframes typing {
-                    from { width: 0 }
-                    to { width: 100% }
-                }
-
-                    /* The typewriter cursor effect */
-                @keyframes blink-caret {
-                    from, to { border-color: transparent }
-                    50% { border-color: orange }
+                @property --n {
+                    syntax: "<number>";
+                    inherits: false;
+                    initial-value: 530;
                 }
 
 .typing {
@@ -161,16 +152,17 @@
   background-clip:padding-box,text;
   background-repeat:no-repeat;
   animation:
-   carret-blink .6s infinite steps(1),   
-   mask calc(var(--n)*(sin(var(--n)) * 0.3)*1s) steps(var(--n)) forwards;
+   carret-blink .5s infinite steps(1),
+   mask calc(var(--n)*0.002s  ) steps(var(--n)) forwards;
 }
 
 @keyframes mask{
-  from {background-size:0 200%}
+  from {background-size: 0% 200%;
+    }
 }
 @keyframes carret-blink{
   0% { background-position: 0 -200%, 0 0 }
-  50% { background-position: 1ch -80%, 0 0 }
+  50% { background-position: 1ch -90%, 0 0 }
 }
             </style>
 
@@ -192,13 +184,13 @@
                     hello, world!
                     <br />
                     <span class="gray"> /home/bitekas$</span> 
-                    <span class="typing" style="--n:530">
-&lt;svg viewBox=\"0 0 800 400\" width=\"800\" height=\"400\" xmlns=\"http://www.w3.org/2000/svg\">
+                    <span class="typing">
+echo "&lt;svg viewBox=\"0 0 800 400\" width=\"800\" height=\"400\" xmlns=\"http://www.w3.org/2000/svg\">
 
 &lt;!-- bitekas github profile -->
 
     &lt;defs>
-        &lt;filter id='noise' x='0%' y='0%' width='100%' height='100%'>
+        &lt;filter id='noise' x='0%' y='0%' width='100%' height='100%'> &lt;feTurbulence baseFrequency=\"0.1 0.2\" result=\"BitekasRGBShift\" numOctaves=\"1\" stitchTiles="stitch"> &lt;animate id=\"noiseAnimate" 
                     </span>
                 </div>
             </div>
