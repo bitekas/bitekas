@@ -160,8 +160,8 @@
 }
             </style>
             <script>
-                console.log(document);
-                alert("123");
+                console.log(document.querySelector("div"));
+                document.querySelector("div").innerText = "abcde";
                 //document.getElementById("id1").innerText = "abc";
             </script>
 
