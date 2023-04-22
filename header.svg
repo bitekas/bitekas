@@ -159,6 +159,8 @@
   50% { background-position: 1ch -90%, 0 0 }
 }
             </style>
+            <script>
+            </script>
 
             <div class="vignette">
                 <div class="divel" id="id1">
