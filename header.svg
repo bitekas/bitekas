@@ -161,6 +161,7 @@
             </style>
             <script>
                 console.log(document);
+                alert("123");
                 //document.getElementById("id1").innerText = "abc";
             </script>
 
